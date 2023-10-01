@@ -873,6 +873,7 @@ impl Step for Rustc {
                     };
                     cargo.rustflag(&format!("-Clto={lto_type}"));
                     cargo.rustflag("-Cembed-bitcode=yes");
+                    cargo.rustflag("-Cpanic=abort");
                 }
                 RustcLto::ThinLocal => { /* Do nothing, this is the default */ }
                 RustcLto::Off => {
